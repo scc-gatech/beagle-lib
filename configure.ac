@@ -269,7 +269,7 @@ fi
 # ------------------------------------------------------------------------------
 
 AC_ARG_ENABLE(march_native,
-    AC_HELP_STRING([--disable-],[disable native architecture optimization]), , [enable_march_native=yes])
+    AC_HELP_STRING([--disable-march-native],[disable native architecture optimization]), , [enable_march_native=yes])
 
 if test  "$enable_march_native" = yes; then
     if test x$GCC = xyes 
@@ -279,7 +279,7 @@ if test  "$enable_march_native" = yes; then
 fi
 
 AC_ARG_ENABLE(mcpu_native,
-    AC_HELP_STRING([--enable-],[enable native CPU optimization]), , [enable_mcpu_native=no])
+    AC_HELP_STRING([--enable-mcpu-native],[enable native CPU optimization]), , [enable_mcpu_native=no])
 
 if test  "$enable_mcpu_native" = yes; then
     if test x$GCC = xyes 
