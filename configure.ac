@@ -269,12 +269,22 @@ fi
 # ------------------------------------------------------------------------------
 
 AC_ARG_ENABLE(march_native,
-    AC_HELP_STRING([--disable-march-native],[disable native architecture optimization]), , [enable_march_native=yes])
+    AC_HELP_STRING([--disable-],[disable native architecture optimization]), , [enable_march_native=yes])
 
 if test  "$enable_march_native" = yes; then
     if test x$GCC = xyes 
     then 
         AX_COMPARE_VERSION([$GCC_VERSION], [ge], [4.2.3], [AM_CXXFLAGS="$AM_CXXFLAGS -march=native"],[])
+    fi
+fi
+
+AC_ARG_ENABLE(mcpu_native,
+    AC_HELP_STRING([--enable-],[enable native CPU optimization]), , [enable_mcpu_native=no])
+
+if test  "$enable_mcpu_native" = yes; then
+    if test x$GCC = xyes 
+    then 
+        AX_COMPARE_VERSION([$GCC_VERSION], [ge], [4.2.3], [AM_CXXFLAGS="$AM_CXXFLAGS -mcpu=native"],[])
     fi
 fi
 
