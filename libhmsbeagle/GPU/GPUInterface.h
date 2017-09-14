@@ -33,6 +33,8 @@
 #endif
 
 #include <map>
+#include <stdlib.h> // pulls in declaration of malloc, free
+#include <string.h> // pulls in declaration for strlen.
 
 #include "libhmsbeagle/GPU/GPUImplHelper.h"
 #include "libhmsbeagle/GPU/GPUImplDefs.h"
